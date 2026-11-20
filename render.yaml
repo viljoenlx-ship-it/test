@@ -1,0 +1,54 @@
+# Hosted preview. Sign in to Render, choose New > Blueprint, pick this repo, and deploy.
+# One free web service and one free Postgres database, both in Frankfurt.
+# Frankfurt is one of Render's regions: oregon, ohio, virginia, frankfurt, singapore.
+# It is the closest of those to Cape Town.
+
+databases:
+  - name: omnivate-preview-db
+    plan: free
+    region: frankfurt
+    postgresMajorVersion: '16'
+    databaseName: omnivate
+    # Private network only. The website uses the internal connection string.
+    ipAllowList: []
+
+services:
+  - type: web
+    name: omnivate-preview
+    runtime: node
+    plan: free
+    region: frankfurt
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    # pnpm build produces the company app and the control panel (served at /control).
+    buildCommand: corepack enable && corepack prepare pnpm@10.33.4 --activate && pnpm install --frozen-lockfile --prod=false && pnpm build
+    # Free instances cannot use preDeployCommand. The start command migrates, seeds, then listens.
+    startCommand: corepack enable && corepack prepare pnpm@10.33.4 --activate && pnpm start
+    envVars:
+      - key: NODE_VERSION
+        value: '22'
+      - key: API_HOST
+        value: 0.0.0.0
+      - key: COOKIE_SECURE
+        value: 'true'
+      - key: VITE_PREVIEW
+        value: 'true'
+      # Preview only. 'on' before any real client data. Missing means on.
+      - key: MFA_ENFORCEMENT
+        value: 'off'
+      - key: DATABASE_ADMIN_URL
+        fromDatabase:
+          name: omnivate-preview-db
+          property: connectionString
+      - key: OMNIVATE_APP_PASSWORD
+        generateValue: true
+      # Optional for the site to start. Needed for live pull request status,
+      # because this repository is private. sync: false so a token typed in
+      # the Render dashboard is not wiped. Leave it unset and Overview still
+      # loads from docs/progress/roadmap.json.
+      - key: GITHUB_TOKEN
+        sync: false
+      # Optional. Premium Reader uses this key. Leave it unset and every company
+      # stays on Standard Reader, which does not leave the server.
+      - key: OPENAI_API_KEY
+        sync: false

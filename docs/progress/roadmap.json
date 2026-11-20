@@ -1,0 +1,509 @@
+{
+  "items": [
+    {
+      "id": "foundation",
+      "title": "Platform Foundation",
+      "description": "One codebase, PostgreSQL, a wall between companies, an audit log that only grows, and money stored in cents.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "prs": [
+        1
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "KRN-01",
+      "title": "Sign-In, Users And Roles",
+      "description": "A person signs in, gets a role, and only sees what that role allows.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "prs": [
+        2
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "sign-in-by-email",
+      "title": "Sign In By Email",
+      "description": "A person signs in with email and password, and picks a company only when the email belongs to more than one.",
+      "phase": "Phase 1 MVP",
+      "status": "in_progress",
+      "prs": [
+        25
+      ]
+    },
+    {
+      "id": "hosted-preview",
+      "title": "Hosted Preview",
+      "description": "A free Render site so the apps can be opened on a phone or a computer.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "prs": [
+        3
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "control-panel",
+      "title": "Control Panel",
+      "description": "A separate sign-in for platform staff to add a client, its people, and its modules.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "prs": [
+        4
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "KRN-02",
+      "title": "Contacts",
+      "description": "One list for customers, suppliers, and staff.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "prs": [
+        5
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "KRN-03",
+      "title": "Branches And Legal Entities",
+      "description": "A company starts with one head office. More branches can be switched on later.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "prs": [
+        6
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "KRN-04",
+      "title": "Custom Fields And Pipelines",
+      "description": "Extra fields, status steps, and in-app alerts that other modules can use.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "prs": [
+        7
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "SCM-01",
+      "title": "Inventory",
+      "description": "Products, services, quantities on hand, and a record of every stock movement.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "prs": [
+        8
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "label-print",
+      "title": "Label Print Page",
+      "description": "Print a stock label from inside the app, at the size of the label.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "moduleId": "SCM-01",
+      "prs": [
+        11
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "KRN-06",
+      "title": "Spreadsheet Import",
+      "description": "Bring contacts and stock in from Excel or CSV, and take a copy back out.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "prs": [
+        9
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "mfa-switch",
+      "title": "MFA On/Off Switch",
+      "description": "The preview can skip the authenticator. Switch it back on before real client data.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "moduleId": "KRN-01",
+      "prs": [
+        10
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "calm-ui",
+      "title": "Calm UI And Tabbed Control Panel",
+      "description": "A quieter light theme, and the client screen split into tabs.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "prs": [
+        12
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "calculated-fields",
+      "title": "Calculated Fields And Automations",
+      "description": "A field that works out its own value, and rules an operator can switch on.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "moduleId": "KRN-04",
+      "prs": [
+        13
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "snap-document",
+      "title": "Snap A Document",
+      "description": "Photograph or upload a supplier invoice or a delivery note, check the fields, receive the stock, and print labels.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "moduleId": "SCM-01",
+      "prs": [
+        14
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "grv-labels",
+      "title": "GRV Barcode Labels And Scanner",
+      "description": "Print a batch of Niimbot labels from a goods received note, and scan them with a Lumni scanner.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "moduleId": "SCM-01",
+      "prs": [
+        16
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "build-progress",
+      "title": "Build Progress",
+      "description": "One place on Overview for what is done, what is being built, and what is still coming.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "prs": [
+        15,
+        17
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "one-ui-standard",
+      "title": "One UI Standard",
+      "description": "One calm light interface for the company app and the control panel, with the full module index.",
+      "phase": "Phase 1 MVP",
+      "status": "in_progress",
+      "prs": [
+        21
+      ]
+    },
+    {
+      "id": "report-builder",
+      "title": "Dynamic Report Builder",
+      "description": "A Reports section where you pick the data, columns, filters, and grouping, then save or export the report.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "moduleId": "ANA-03",
+      "prs": [
+        19
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "standard-document-reader",
+      "title": "Standard Document Reader",
+      "description": "An included reader for supplier invoices and delivery notes, for companies that do not want the extra fee.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "moduleId": "SCM-01",
+      "prs": [
+        18
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "demo-polish",
+      "title": "Demo Polish",
+      "description": "Title Case on the remaining buttons and labels, and custom fields on the stock item screen.",
+      "phase": "Phase 1 MVP",
+      "status": "done",
+      "prs": [
+        20
+      ],
+      "finishedOn": "2026-11-19"
+    },
+    {
+      "id": "people-plain-language",
+      "title": "People Page And Plain Language",
+      "description": "People, roles, and segregation rules use plain words, toggles, and one quiet menu per row.",
+      "phase": "Phase 1 MVP",
+      "status": "in_progress",
+      "prs": [
+        23
+      ]
+    },
+    {
+      "id": "phone-experience",
+      "title": "Phone Experience",
+      "description": "The phone is for sales, stock, documents, and contacts, with setup left on a computer.",
+      "phase": "Phase 1 MVP",
+      "status": "in_progress",
+      "prs": [
+        24,
+        26,
+        27
+      ]
+    },
+    {
+      "id": "sales-quotes-invoices",
+      "title": "Sales: Quotes, Invoices And Payments",
+      "description": "Quotes, tax invoices, credit notes, and customer payments, with a statement and an aged debtors report.",
+      "phase": "Phase 1b",
+      "status": "in_progress",
+      "prs": [
+        22
+      ]
+    },
+    {
+      "id": "krn06-cleanup",
+      "title": "Import Table Cleanup",
+      "description": "Remove the old stand-in tables for contacts and stock. Imports already save into the real lists.",
+      "phase": "Phase 1 MVP",
+      "status": "coming",
+      "moduleId": "KRN-06"
+    },
+    {
+      "id": "paid-hosting",
+      "title": "Paid Hosting And MFA Back On",
+      "description": "Move off the free preview, and turn the authenticator back on, before any real client data.",
+      "phase": "Phase 1 MVP",
+      "status": "coming"
+    },
+    {
+      "id": "SAL-01",
+      "title": "Quotes",
+      "description": "Track a lead and send a price a customer can accept.",
+      "phase": "Phase 1b",
+      "status": "coming"
+    },
+    {
+      "id": "FIN-02",
+      "title": "Invoicing",
+      "description": "Customer accounts, tax invoices, credit notes, receipts, payment allocation, statements, ageing, FIN-01 posting, customer credit limits/holds and an auditable overdue-reminder queue. Recurring invoice scheduling and outbound reminder email delivery remain follow-on work.",
+      "phase": "Phase 1b",
+      "status": "in_progress"
+    },
+    {
+      "id": "FIN-01",
+      "title": "General Ledger",
+      "description": "A chart of accounts, balanced journals from sales and stock, the main reports, and a guided import for opening balances.",
+      "phase": "Phase 1b",
+      "status": "in_progress",
+      "prs": [
+        28
+      ]
+    },
+    {
+      "id": "ap-posting",
+      "title": "Accounts Payable Posting",
+      "description": "A captured supplier bill can now be posted to FIN-01 expense, VAT-input and creditors-control accounts; credit notes and purchase-order/GRN matching remain.",
+      "phase": "Phase 1b",
+      "status": "in_progress",
+      "moduleId": "FIN-03"
+    },
+    {
+      "id": "KRN-05",
+      "title": "Customer And Supplier Portals",
+      "description": "A link a customer or supplier can open to see their own documents.",
+      "phase": "Tier 1 Kernel",
+      "status": "coming"
+    },
+    {
+      "id": "ANA-03",
+      "title": "Dashboards And Reports",
+      "description": "The numbers for the modules a company has switched on.",
+      "phase": "Tier 1 Kernel",
+      "status": "coming"
+    },
+    {
+      "id": "FIN-03",
+      "title": "Creditors",
+      "description": "Separate creditors module now has supplier-bill capture, FIN-01 bill posting, supplier payments and allocations, ageing, tenant-scoped APIs and a company-app screen. Credit notes, PO/GRN three-way matching, payment approvals, EFT/remittance exports and full workflow tests remain.",
+      "phase": "Tier 2 Commercial Core",
+      "status": "in_progress"
+    },
+    {
+      "id": "FIN-04",
+      "title": "Cashbook And Bank Reconciliation",
+      "description": "Separate cashbook module now has bank-account setup, idempotent statement-line import, FIN-01 journal matching, reconciliation balances and completion controls, tenant-scoped APIs and a company-app screen. CSV upload, live bank feeds, split allocations and full integration tests remain.",
+      "phase": "Tier 2 Commercial Core",
+      "status": "in_progress"
+    },
+    {
+      "id": "FIN-05",
+      "title": "Petty Cash And Expense Claims",
+      "description": "Separate petty-cash module now has fund/float controls, balanced cash movement postings, receipt-backed expense claims, approval/rejection/payment postings, tenant-scoped APIs and a company-app screen. Document-capture linking, workflow/approval-limit integration, payroll adapter and full tests remain.",
+      "phase": "Tier 2 Commercial Core",
+      "status": "in_progress"
+    },
+    {
+      "id": "FIN-06",
+      "title": "VAT And Tax",
+      "description": "Separate tax module now has configurable tax codes, VAT transaction validation, period preparation, filing reference capture, locking, tenant-scoped APIs and a company-app screen. VAT201 mapping, SARS export, automatic source adapters, GL VAT reconciliation and compliance review remain.",
+      "phase": "Tier 2 Commercial Core",
+      "status": "in_progress"
+    },
+    {
+      "id": "SAL-02",
+      "title": "Sales Orders",
+      "description": "Reserve stock, deliver it, and invoice what went out.",
+      "phase": "Tier 2 Commercial Core",
+      "status": "coming"
+    },
+    {
+      "id": "SCM-02",
+      "title": "Procurement",
+      "description": "Ask a supplier for a price and raise a purchase order.",
+      "phase": "Tier 2 Commercial Core",
+      "status": "coming"
+    },
+    {
+      "id": "SAL-03",
+      "title": "Point Of Sale",
+      "description": "Sell at the counter, split the payment, and cash up the till.",
+      "phase": "Tier 3 Operational",
+      "status": "coming"
+    },
+    {
+      "id": "SAL-04",
+      "title": "Recurring Bills And Rentals",
+      "description": "Send the same invoice each month, and track equipment that is out on hire.",
+      "phase": "Tier 3 Operational",
+      "status": "coming"
+    },
+    {
+      "id": "SAL-05",
+      "title": "Support, Returns And Warranties",
+      "description": "Log a problem, a return, or a warranty claim.",
+      "phase": "Tier 3 Operational",
+      "status": "coming"
+    },
+    {
+      "id": "SCM-03",
+      "title": "Warehousing And Stocktakes",
+      "description": "Put goods in a bin, pick from that bin, and count what is there.",
+      "phase": "Tier 3 Operational",
+      "status": "coming"
+    },
+    {
+      "id": "SCM-04",
+      "title": "Dispatch And Fleet",
+      "description": "Load deliveries onto a vehicle and keep the signed proof of delivery.",
+      "phase": "Tier 3 Operational",
+      "status": "coming"
+    },
+    {
+      "id": "OPS-01",
+      "title": "Manufacturing",
+      "description": "Issue parts to a work order and take the finished goods back into stock.",
+      "phase": "Tier 3 Operational",
+      "status": "coming"
+    },
+    {
+      "id": "OPS-02",
+      "title": "Job Cards",
+      "description": "Collect parts, hours, and cash spent against one job.",
+      "phase": "Tier 3 Operational",
+      "status": "coming"
+    },
+    {
+      "id": "OPS-03",
+      "title": "Assets And Maintenance",
+      "description": "The asset register, depreciation, and a service before a breakdown.",
+      "phase": "Tier 3 Operational",
+      "status": "coming"
+    },
+    {
+      "id": "OPS-04",
+      "title": "Quality Checks",
+      "description": "Inspect goods on arrival and record what failed.",
+      "phase": "Tier 3 Operational",
+      "status": "coming"
+    },
+    {
+      "id": "HRP-01",
+      "title": "Employee Records",
+      "description": "The staff file, who they report to, and the steps to start someone.",
+      "phase": "Tier 4 Back-Office",
+      "status": "coming"
+    },
+    {
+      "id": "HRP-02",
+      "title": "Time And Shifts",
+      "description": "Rosters, clock-in, overtime, and leave.",
+      "phase": "Tier 4 Back-Office",
+      "status": "coming"
+    },
+    {
+      "id": "HRP-03",
+      "title": "Payroll",
+      "description": "A pay run, a payslip, and PAYE, UIF, and SDL.",
+      "phase": "Tier 4 Back-Office",
+      "status": "coming"
+    },
+    {
+      "id": "HRP-04",
+      "title": "Staff Documents",
+      "description": "An employment contract or a warning filled in from the staff file.",
+      "phase": "Tier 4 Back-Office",
+      "status": "coming"
+    },
+    {
+      "id": "HRP-05",
+      "title": "Staff Welfare",
+      "description": "Staff loans, and notes that stay hidden from people who should not see them.",
+      "phase": "Tier 4 Back-Office",
+      "status": "coming"
+    },
+    {
+      "id": "CMP-01",
+      "title": "Employment Equity And B-BBEE",
+      "description": "Equity counts and the B-BBEE scorecard.",
+      "phase": "Tier 4 Back-Office",
+      "status": "coming"
+    },
+    {
+      "id": "CMP-02",
+      "title": "COIDA And POPIA",
+      "description": "COIDA earnings, a UI-19 when someone leaves, and POPIA consent.",
+      "phase": "Tier 4 Back-Office",
+      "status": "coming"
+    },
+    {
+      "id": "CMP-03",
+      "title": "Health And Safety",
+      "description": "Incidents, PPE handed out, and contracts that are about to end.",
+      "phase": "Tier 4 Back-Office",
+      "status": "coming"
+    },
+    {
+      "id": "ANA-01",
+      "title": "Projects",
+      "description": "Tasks, dates, and a budget next to what was spent.",
+      "phase": "Tier 4 Back-Office",
+      "status": "coming"
+    },
+    {
+      "id": "ANA-02",
+      "title": "IT Assets And Helpdesk",
+      "description": "Who has which laptop, which software seats are in use, and internal IT tickets.",
+      "phase": "Tier 4 Back-Office",
+      "status": "coming"
+    }
+  ]
+}

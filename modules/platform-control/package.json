@@ -1,0 +1,17 @@
+{
+  "name": "@omnivate/module-platform-control",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^9.0.3",
+    "@omnivate/kernel": "workspace:*",
+    "@omnivate/module-krn-02": "workspace:*",
+    "@omnivate/shared": "workspace:*",
+    "drizzle-orm": "^0.44.2",
+    "fastify": "^5.3.3",
+    "otpauth": "^9.4.0"
+  }
+}

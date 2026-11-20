@@ -1,0 +1,16 @@
+{
+  "name": "@omnivate/module-ana-03",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@omnivate/kernel": "workspace:*",
+    "@omnivate/module-platform-control": "workspace:*",
+    "@omnivate/shared": "workspace:*",
+    "drizzle-orm": "^0.44.2",
+    "fastify": "^5.3.3",
+    "pdfkit": "^0.17.2"
+  }
+}

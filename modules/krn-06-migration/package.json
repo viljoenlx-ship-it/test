@@ -1,0 +1,22 @@
+{
+  "name": "@omnivate/module-krn-06",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^9.0.3",
+    "@omnivate/kernel": "workspace:*",
+    "@omnivate/module-krn-01": "workspace:*",
+    "@omnivate/module-krn-02": "workspace:*",
+    "@omnivate/module-fin-01": "workspace:*",
+    "@omnivate/module-krn-03": "workspace:*",
+    "@omnivate/module-o2c": "workspace:*",
+    "@omnivate/module-scm-01": "workspace:*",
+    "@omnivate/shared": "workspace:*",
+    "drizzle-orm": "^0.44.2",
+    "exceljs": "^4.4.0",
+    "fastify": "^5.3.3"
+  }
+}

@@ -1,0 +1,15 @@
+/** FIN-04 bank statement import, matching and reconciliation rules. */
+export type BankLine={date:string;description:string;reference:string;amountCents:bigint;externalId?:string};
+export function parseStatementCsv(csv:string, delimiter=","): BankLine[]{
+ const lines=csv.replace(/^\uFEFF/,'').split(/\r?\n/).filter(x=>x.trim()); if(lines.length<2) throw new Error('Statement CSV needs a header and at least one transaction.');
+ const parse=(s:string)=>{const out:string[]=[];let v='',q=false;for(let i=0;i<s.length;i++){const c=s[i];if(c==='"'&&s[i+1]==='"'&&q){v+='"';i++;}else if(c==='"')q=!q;else if(c===delimiter&&!q){out.push(v.trim());v='';}else v+=c;}out.push(v.trim());return out;};
+ const headerLine=lines[0]; if(!headerLine) throw new Error('Statement CSV needs a header and at least one transaction.'); const head=parse(headerLine).map(x=>x.toLowerCase()); const col=(...names:string[])=>head.findIndex(x=>names.includes(x));
+ const di=col('date','transaction date','transaction_date'), de=col('description','details','narrative'), ri=col('reference','ref'), ai=col('amount','amount zar','debit/credit','value'), ei=col('id','transaction id','external id');
+ if([di,de,ai].some(x=>x<0)) throw new Error('CSV must contain date, description and amount columns.');
+ return lines.slice(1).map((line,i)=>{const c=parse(line);const date=c[di]??'';const raw=(c[ai]??'').replace(/[R\s,]/g,'');const amountMatch=/^(-?)(\d+)(?:\.(\d{1,2}))?$/.exec(raw);if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||!amountMatch)throw new Error(`Invalid bank transaction on CSV row ${i+2}.`);const sign=amountMatch[1]==='-'?-1n:1n;const whole=BigInt(amountMatch[2]??'0');const fraction=BigInt((amountMatch[3]??'').padEnd(2,'0')||'0');const amountCents=sign*(whole*100n+fraction);if(amountCents===0n)throw new Error(`Invalid bank transaction on CSV row ${i+2}.`);return {date,description:c[de]??'',reference:ri>=0?c[ri]??'':'',amountCents,...(ei>=0&&c[ei]?{externalId:c[ei]}:{})};});
+}
+export function suggestMatches(bank:BankLine,candidates:readonly {id:string;date:string;reference:string;amountCents:bigint;description:string}[]){
+ return candidates.map(c=>({id:c.id,score:(c.amountCents===bank.amountCents?50:0)+(c.date===bank.date?20:0)+(bank.reference.length>0 && c.reference.toLowerCase()===bank.reference.toLowerCase()?25:0)+(c.description.length>0 && bank.description.toLowerCase().includes(c.description.toLowerCase())?5:0)})).filter(x=>x.score>=50).sort((a,b)=>b.score-a.score);
+}
+export function reconciliationDifference(statementClosingCents:bigint,bookClosingCents:bigint){return statementClosingCents-bookClosingCents;}
+export function validateSplit(amountCents:bigint, splits:readonly bigint[]){if(amountCents===0n||splits.length===0||splits.some(x=>x===0n||((x>0n)!==(amountCents>0n))))throw new Error('Split allocations must be non-zero and have the same direction as the bank line.');if(splits.reduce((a,b)=>a+b,0n)!==amountCents)throw new Error('Split allocations must equal the bank transaction amount.');}

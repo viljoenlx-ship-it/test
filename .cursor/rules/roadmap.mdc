@@ -1,0 +1,6 @@
+---
+description: Update the build progress roadmap in every pull request
+alwaysApply: true
+---
+
+In every pull request, update `docs/progress/roadmap.json`. Add the work as `in_progress` and put this pull request's number in `prs`. Do not mark the row done while the pull request is open. A merged pull request is shown as Done from GitHub. The full note is in `AGENTS.md`.

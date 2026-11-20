@@ -1,0 +1,15 @@
+{
+  "name": "@omnivate/module-fin-06",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@omnivate/finance-api": "workspace:*",
+    "@omnivate/kernel": "workspace:*",
+    "@omnivate/module-fin-01": "workspace:*",
+    "drizzle-orm": "^0.44.2",
+    "fastify": "^5.3.3"
+  }
+}

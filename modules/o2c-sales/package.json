@@ -1,0 +1,20 @@
+{
+  "name": "@omnivate/module-o2c",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@omnivate/kernel": "workspace:*",
+    "@omnivate/module-fin-01": "workspace:*",
+    "@omnivate/module-ana-03": "workspace:*",
+    "@omnivate/module-krn-04": "workspace:*",
+    "@omnivate/module-platform-control": "workspace:*",
+    "@omnivate/module-scm-01": "workspace:*",
+    "@omnivate/shared": "workspace:*",
+    "drizzle-orm": "^0.44.2",
+    "fastify": "^5.3.3",
+    "pdfkit": "^0.17.2"
+  }
+}

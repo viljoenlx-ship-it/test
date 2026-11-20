@@ -1,0 +1,38 @@
+{
+  "name": "omnivate",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.4",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "bash scripts/dev.sh",
+    "build": "pnpm --filter @omnivate/web build && pnpm --filter @omnivate/control-panel build",
+    "start": "tsx scripts/preview-start.ts",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p apps/web/tsconfig.json --noEmit && tsc -p apps/control-panel/tsconfig.json --noEmit && tsc -p packages/ui/tsconfig.json --noEmit",
+    "test": "vitest run",
+    "db:migrate": "pnpm --filter @omnivate/db migrate",
+    "db:seed": "pnpm --filter @omnivate/db seed",
+    "verify": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test",
+    "screenshots": "tsx scripts/capture-screenshots.ts",
+    "phone:smoke": "tsx scripts/phone-shell.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "@omnivate/db": "workspace:*",
+    "@types/node": "^22.15.21",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.26.0",
+    "happy-dom": "^17.4.4",
+    "playwright": "^1.65.1",
+    "prettier": "^3.5.3",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.32.1",
+    "vitest": "^3.1.4"
+  }
+}

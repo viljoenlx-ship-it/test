@@ -1,0 +1,81 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "paths": {
+      "@omnivate/shared": [
+        "packages/shared/src/index.ts"
+      ],
+      "@omnivate/db": [
+        "packages/db/src/index.ts"
+      ],
+      "@omnivate/kernel": [
+        "packages/kernel/src/index.ts"
+      ],
+      "@omnivate/module-ana-03": [
+        "modules/ana-03-reports/src/index.ts"
+      ],
+      "@omnivate/module-krn-01": [
+        "modules/krn-01-identity/src/index.ts"
+      ],
+      "@omnivate/module-krn-02": [
+        "modules/krn-02-party-directory/src/index.ts"
+      ],
+      "@omnivate/module-krn-03": [
+        "modules/krn-03-branches/src/index.ts"
+      ],
+      "@omnivate/module-krn-04": [
+        "modules/krn-04-workflows/src/index.ts"
+      ],
+      "@omnivate/module-krn-06": [
+        "modules/krn-06-migration/src/index.ts"
+      ],
+      "@omnivate/module-platform-control": [
+        "modules/platform-control/src/index.ts"
+      ],
+      "@omnivate/module-doc-capture": [
+        "modules/doc-capture/src/index.ts"
+      ],
+      "@omnivate/module-scm-01": [
+        "modules/scm-01-catalog/src/index.ts"
+      ],
+      "@omnivate/module-fin-01": [
+        "modules/fin-01-ledger/src/index.ts"
+      ],
+      "@omnivate/module-fin-03": [
+        "modules/fin-03-creditors/src/index.ts"
+      ],
+      "@omnivate/module-fin-04": [
+        "modules/fin-04-cashbook/src/index.ts"
+      ],
+      "@omnivate/module-fin-05": [
+        "modules/fin-05-petty-cash/src/index.ts"
+      ],
+      "@omnivate/module-fin-06": [
+        "modules/fin-06-tax/src/index.ts"
+      ],
+      "@omnivate/module-o2c": [
+        "modules/o2c-sales/src/index.ts"
+      ],
+      "@omnivate/finance-api": [
+        "packages/finance-api/src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "packages/**/*.ts",
+    "modules/**/*.ts",
+    "apps/api/**/*.ts",
+    "apps/web/vite.config.ts",
+    "scripts/**/*.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts",
+    "vitest.global-setup.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "packages/ui",
+    "apps/control-panel"
+  ]
+}

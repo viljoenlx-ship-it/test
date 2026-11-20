@@ -1,0 +1,10 @@
+{
+  "name": "@omnivate/finance-api",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@omnivate/kernel": "workspace:*",
+    "@omnivate/module-fin-01": "workspace:*"
+  }
+}

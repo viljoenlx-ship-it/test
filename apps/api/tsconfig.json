@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@omnivate/shared": ["../../packages/shared/src/index.ts"],
+      "@omnivate/kernel": ["../../packages/kernel/src/index.ts"],
+      "@omnivate/module-krn-04": ["../../modules/krn-04-workflows/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts"]
+}

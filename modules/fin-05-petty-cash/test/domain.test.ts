@@ -1,0 +1,3 @@
+import { describe, expect, it } from 'vitest';
+import { cashFundBalance, transitionClaim, validateClaim } from '../src/domain';
+describe('FIN-05 petty cash rules',()=>{it('calculates fund balance',()=>{expect(cashFundBalance(10000n,[{direction:'out',amountCents:2500n}])).toBe(7500n);});it('enforces claim approval sequence',()=>{expect(transitionClaim('submitted','approve')).toBe('approved');expect(()=>transitionClaim('submitted','pay')).toThrow();});it('requires receipt and balanced totals',()=>{expect(()=>validateClaim(1000n,150n,1150n,true)).not.toThrow();expect(()=>validateClaim(1000n,150n,1150n,false)).toThrow();});});

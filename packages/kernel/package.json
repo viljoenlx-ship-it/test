@@ -1,0 +1,13 @@
+{
+  "name": "@omnivate/kernel",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@omnivate/db": "workspace:*",
+    "@omnivate/shared": "workspace:*",
+    "drizzle-orm": "^0.44.2"
+  }
+}

@@ -1,0 +1,146 @@
+.build-progress {
+  display: grid;
+  gap: 16px;
+}
+
+.progress-top {
+  display: grid;
+  gap: 6px;
+}
+
+.progress-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--ui-line-strong);
+  overflow: hidden;
+}
+
+.progress-bar > span {
+  display: block;
+  height: 100%;
+  background: var(--ui-brand);
+}
+
+.progress-caption {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.progress-counts,
+.build-progress .progress-note {
+  margin: 6px 0 0;
+  color: var(--ui-muted);
+  font-size: 0.8rem;
+}
+
+.progress-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.progress-filters button {
+  min-height: 40px;
+  padding: 6px 12px;
+  border: 1px solid var(--ui-line-strong);
+  border-radius: 999px;
+  background: var(--ui-surface);
+  color: var(--ui-ink);
+  cursor: pointer;
+}
+
+.progress-filters button[aria-pressed='true'] {
+  background: #f2f2f4;
+  border-color: transparent;
+  color: var(--ui-ink);
+}
+
+.progress-columns {
+  display: grid;
+  gap: 16px;
+}
+
+.progress-column h3 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.progress-column h3 span {
+  color: var(--ui-muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.progress-phase {
+  margin: 12px 0 8px;
+  color: var(--ui-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.progress-cards {
+  display: grid;
+  gap: 8px;
+}
+
+.progress-card {
+  padding: 12px 14px;
+  border: 1px solid var(--ui-line);
+  border-radius: 12px;
+  background: var(--ui-surface);
+  box-shadow: var(--ui-shadow);
+}
+
+.progress-card.done {
+  border-top: 3px solid var(--ui-ok);
+}
+
+.progress-card.in_progress {
+  border-top: 3px solid var(--ui-warn);
+}
+
+.progress-card.coming {
+  border-top: 3px solid var(--ui-line-strong);
+}
+
+.progress-card h5 {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.progress-card p {
+  margin: 6px 0 0;
+  color: var(--ui-muted);
+  font-size: 0.86rem;
+}
+
+.progress-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-meta a {
+  font-weight: 600;
+}
+
+.progress-empty {
+  margin: 0;
+  color: var(--ui-muted);
+  font-size: 0.86rem;
+}
+
+@media (min-width: 1100px) {
+  .progress-columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+  }
+}

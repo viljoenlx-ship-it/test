@@ -1,0 +1,22 @@
+{
+  "name": "@omnivate/db",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "migrate": "tsx src/bin/migrate.ts",
+    "seed": "tsx src/bin/seed.ts"
+  },
+  "dependencies": {
+    "@omnivate/shared": "workspace:*",
+    "argon2": "^0.44.0",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.44.2",
+    "pg": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.15.2"
+  }
+}
