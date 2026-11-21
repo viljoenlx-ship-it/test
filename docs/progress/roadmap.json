@@ -504,6 +504,16 @@
       "description": "Who has which laptop, which software seats are in use, and internal IT tickets.",
       "phase": "Tier 4 Back-Office",
       "status": "coming"
+    },
+    {
+      "id": "pr-25",
+      "title": "FIN-02: validate customer payment dates",
+      "description": "Rejects impossible financial period or payment dates with regression coverage.",
+      "phase": "Phase 1b",
+      "status": "in_progress",
+      "prs": [
+        25
+      ]
     }
   ]
 }
