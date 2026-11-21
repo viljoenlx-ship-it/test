@@ -1,0 +1,1 @@
+import{describe,expect,it}from'vitest';import{isIsoCalendarDate}from'../src/domain';describe('customer payment dates',()=>{it('accepts leap days and rejects impossible dates',()=>{expect(isIsoCalendarDate('2024-02-29')).toBe(true);expect(isIsoCalendarDate('2026-02-29')).toBe(false);});});
