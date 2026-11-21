@@ -39,17 +39,35 @@ const app = await buildApp({
         },
 });
 
-const shutdown = async (): Promise<void> => {
-  await app.close();
-  await closePools();
+let shutdownPromise: Promise<void> | undefined;
+
+const shutdown = (): Promise<void> => {
+  shutdownPromise ??= (async () => {
+    try {
+      await app.close();
+    } finally {
+      await closePools();
+    }
+  })();
+
+  return shutdownPromise;
 };
 
-process.on('SIGINT', () => {
-  void shutdown().then(() => process.exit(0));
-});
-process.on('SIGTERM', () => {
-  void shutdown().then(() => process.exit(0));
-});
+const handleShutdownSignal = (signal: NodeJS.Signals): void => {
+  app.log.info({ signal }, 'Shutdown signal received');
+  void shutdown().then(
+    () => {
+      app.log.info('Application shutdown complete');
+    },
+    (error: unknown) => {
+      app.log.error(error, 'Application shutdown failed');
+      process.exitCode = 1;
+    },
+  );
+};
+
+process.once('SIGINT', handleShutdownSignal);
+process.once('SIGTERM', handleShutdownSignal);
 
 try {
   if (mfaEnforcement() === 'off') {
@@ -57,7 +75,11 @@ try {
   }
   await app.listen({ port, host });
 } catch (error) {
-  app.log.error(error);
-  await closePools();
-  process.exit(1);
+  app.log.error(error, 'Application startup failed');
+  try {
+    await shutdown();
+  } catch (shutdownError) {
+    app.log.error(shutdownError, 'Cleanup after startup failure failed');
+  }
+  process.exitCode = 1;
 }
