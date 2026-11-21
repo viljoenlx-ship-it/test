@@ -504,6 +504,16 @@
       "description": "Who has which laptop, which software seats are in use, and internal IT tickets.",
       "phase": "Tier 4 Back-Office",
       "status": "coming"
+    },
+    {
+      "id": "pr-21",
+      "title": "KRN-01: stop logging outbound email bodies",
+      "description": "Hardens this module with focused validation and regression coverage.",
+      "phase": "Phase 1b",
+      "status": "in_progress",
+      "prs": [
+        21
+      ]
     }
   ]
 }
