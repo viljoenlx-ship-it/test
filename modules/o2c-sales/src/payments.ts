@@ -12,6 +12,7 @@ import { assertInvoiceRead, assertInvoiceWrite, type Actor } from './access';
 import { SalesError } from './errors';
 import { postCustomerPayment } from '@omnivate/module-fin-01';
 import { invoiceBalance } from './documents';
+import { isIsoCalendarDate } from './domain';
 import { audit, many, one } from './rows';
 
 export type PaymentInput = {
@@ -37,7 +38,7 @@ function centsOf(value: string, label: string): bigint {
 
 export async function recordPayment(tx: TenantTransaction, actor: Actor, input: PaymentInput) {
   await assertInvoiceWrite(tx, actor.userId);
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(input.paidOn.trim())) {
+  if (!isIsoCalendarDate(input.paidOn.trim())) {
     throw new SalesError('Enter the payment date.');
   }
   if (!isPaymentMethod(input.method)) {
