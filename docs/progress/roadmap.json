@@ -504,6 +504,16 @@
       "description": "Who has which laptop, which software seats are in use, and internal IT tickets.",
       "phase": "Tier 4 Back-Office",
       "status": "coming"
+    },
+    {
+      "id": "pr-23",
+      "title": "FIN-04: validate statement calendar dates",
+      "description": "Adds validation and focused regression coverage for this module.",
+      "phase": "Phase 1b",
+      "status": "in_progress",
+      "prs": [
+        23
+      ]
     }
   ]
 }
