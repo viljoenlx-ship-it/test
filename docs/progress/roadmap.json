@@ -504,6 +504,16 @@
       "description": "Who has which laptop, which software seats are in use, and internal IT tickets.",
       "phase": "Tier 4 Back-Office",
       "status": "coming"
+    },
+    {
+      "id": "pr-19",
+      "title": "FIN-05: reject invalid petty cash float limits",
+      "description": "Validates financial inputs and adds targeted regression tests.",
+      "phase": "Phase 1b",
+      "status": "in_progress",
+      "prs": [
+        19
+      ]
     }
   ]
 }
