@@ -48,6 +48,9 @@ jobs:
       - name: Install
         run: pnpm install --frozen-lockfile
 
+      - name: Migrate empty PostgreSQL database
+        run: pnpm db:migrate
+
       - name: Lint
         run: pnpm lint
 
