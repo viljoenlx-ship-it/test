@@ -504,6 +504,16 @@
       "description": "Who has which laptop, which software seats are in use, and internal IT tickets.",
       "phase": "Tier 4 Back-Office",
       "status": "coming"
+    },
+    {
+      "id": "pr-18",
+      "title": "FIN-03: validate supplier payment balance inputs",
+      "description": "Validates financial inputs and adds targeted regression tests.",
+      "phase": "Phase 1b",
+      "status": "in_progress",
+      "prs": [
+        18
+      ]
     }
   ]
 }
