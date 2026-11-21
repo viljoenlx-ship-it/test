@@ -1,0 +1,1 @@
+import{describe,expect,it}from'vitest';import{parseStatementCsv}from'../src/domain';describe('statement calendar dates',()=>{it('accepts leap day and rejects impossible dates',()=>{expect(parseStatementCsv('date,description,amount\n2024-02-29,Sale,10.00')).toHaveLength(1);expect(()=>parseStatementCsv('date,description,amount\n2026-02-29,Sale,10.00')).toThrow();});});
