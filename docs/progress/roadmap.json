@@ -504,6 +504,14 @@
       "description": "Who has which laptop, which software seats are in use, and internal IT tickets.",
       "phase": "Tier 4 Back-Office",
       "status": "coming"
+    },
+    {
+      "id": "m0-ci-migration-baseline",
+      "title": "Verified CI And Migration Baseline",
+      "description": "CI installs from the frozen lockfile, migrates a clean PostgreSQL 16 database, and verifies lint, formatting, types, builds, tests, phone smoke checks, and secret scanning.",
+      "phase": "Phase 1 MVP",
+      "status": "in_progress",
+      "prs": []
     }
   ]
 }
