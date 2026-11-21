@@ -1,0 +1,1 @@
+import {describe,expect,it} from 'vitest';import{vatPeriodCode}from'../src/domain';describe('VAT calendar validation',()=>{it('rejects impossible month-end dates',()=>expect(()=>vatPeriodCode('2026-02-29','2026-03-31')).toThrow());it('accepts leap-year month end',()=>expect(vatPeriodCode('2024-02-01','2024-02-29')).toBe('20240201_20240229'));});
