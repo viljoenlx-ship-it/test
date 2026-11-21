@@ -25,7 +25,8 @@ export type PostJournalInput = {
 
 function asDate(value: string): string {
   const text = value.trim();
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+  const date = new Date(`${text}T00:00:00.000Z`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(text) || !Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== text) {
     throw new LedgerError('Enter the journal date.');
   }
   return text;
