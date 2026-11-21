@@ -1,0 +1,2 @@
+import { describe, expect, it } from 'vitest';
+describe('journal calendar date contract',()=>{it('distinguishes real dates from impossible dates',()=>{const valid=new Date('2024-02-29T00:00:00.000Z');expect(valid.toISOString().slice(0,10)).toBe('2024-02-29');for(const value of ['2026-02-29','2026-13-01','2026-04-31']){const date=new Date(value+'T00:00:00.000Z');expect(Number.isFinite(date.getTime())&&date.toISOString().slice(0,10)===value).toBe(false);}});});
