@@ -14,6 +14,6 @@ export class DevLogMailer implements Mailer {
 
   async send(message: OutboundMail): Promise<void> {
     this.deliveries.push(message);
-    console.info(`[krn-01 mail] to=${message.to} subject=${message.subject}\n${message.text}`);
+    console.info(`[krn-01 mail] delivery recorded to=${message.to} subject=${message.subject}`);
   }
 }
